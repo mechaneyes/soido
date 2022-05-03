@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US" class="lock">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="PQINA" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+
+  <body class="layout-post">
+    <main>
+      <div class="article">
+        <p><button data-action="open">Open modal</button></p>
+        <div class="modal">
+          <button data-action="close">Close modal</button>
+        </div>
+        <style>
+          html.lock,
+          html.lock body {
+            box-sizing: border-box;
+            height: calc(var(--window-inner-height) - 1px);
+            overflow: hidden;
+          }
+
+          .modal {
+            display: none;
+          }
+
+          html.lock .modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1;
+          }
+        </style>
+        <script>
+          // this syncs the window height
+          const syncWindowHeight = () => {
+            document.documentElement.style.setProperty(
+              "--window-inner-height",
+              `${window.innerHeight}px`
+            );
+          };
+
+          // for iOS 15, prevents re-hiding of footer
+          document
+            .querySelector(".modal")
+            .addEventListener("pointermove", (e) => {
+              e.preventDefault();
+            });
+
+          // bonus for iOS 14, prevents re-hiding of footer
+          document
+            .querySelector(".modal")
+            .addEventListener("touchmove", (e) => {
+              e.preventDefault();
+            });
+
+          // this locks the body and remembers the scroll position
+          let scrollY;
+          document.documentElement.addEventListener("click", (e) => {
+            if (e.target.dataset.action === "open") {
+              syncWindowHeight();
+
+              scrollY = window.scrollY;
+              document.documentElement.classList.add("lock");
+
+              window.addEventListener("resize", syncWindowHeight);
+            } else if (e.target.dataset.action === "close") {
+              window.removeEventListener("resize", syncWindowHeight);
+
+              document.documentElement.classList.remove("lock");
+              window.scrollTo(0, scrollY);
+            }
+          });
+        </script>
+      </div>
+    </main>
+  </body>
+</html>

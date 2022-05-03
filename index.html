@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=0.66, user-scalable=no" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <title>So I Do</title>
+    <link rel="stylesheet" href="soido.css">
+    <script src="https://use.typekit.net/wmq4liz.js"></script>
+    <script>
+      try {
+        Typekit.load({ async: true });
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <!-- <div class="container">
+      <div class="cta">
+        To Paint, Visit <span>http://soido.io</span> On Your Phone
+      </div>
+      <div class="numUsers"></div>
+    </div> -->
+
+    <!-- <div id="directions">
+    <p>Visit soido.io on your phone and start painting</p>
+</div> -->
+
+    <div class="logo"><img src="mech-logo.gif" /></div>
+
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="//cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.9/p5.min.js"></script>
+    <script src="sketch.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // This is obviously the resize/orientation change functionality
+        // var canvas = document.getElementById("defaultCanvas");
+        // var canvasWidth;
+        // var ctx;
+
+        // function init() {
+        //   if (canvas.getContext) {
+        //     ctx = canvas.getContext("2d");
+
+        //     window.addEventListener("resize", resizeCanvas, false);
+        //     window.addEventListener("orientationchange", resizeCanvas, false);
+        //     resizeCanvas();
+        //   }
+        // }
+
+        // function resizeCanvas() {
+        //   canvas.width = window.innerWidth;
+        //   canvas.height = window.innerHeight;
+        // }
+
+        // Keep screen from moving when dragging across canvas
+        // document.ontouchmove = function (e) {
+        //   e.preventDefault();
+        // };
+      });
+    </script>
+  </body>
+</html>

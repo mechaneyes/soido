@@ -1,0 +1,22 @@
+{
+  "name": "so-i-do--canvas",
+  "version": "0.1.0",
+  "description": "p5.js vs Socket.IO",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-sass": "v0.9.2"
+  },
+  "dependencies": {
+    "http": "0.0.0",
+    "socket.io": "^1.3.6"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.12.2"
+  }
+}
