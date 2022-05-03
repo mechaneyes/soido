@@ -65,7 +65,8 @@ function setup() {
   // Start a socket connection to the server
 
   // socket = io("http://localhost");
-  socket = io('https://so-i-do.onrender.com/');
+  socket = io();
+  // socket = io('https://so-i-do.onrender.com/');
 
   // socket = io('https://lit-ravine-4197.herokuapp.com/');
   // socket = io('http://'+window.location.hostname);
