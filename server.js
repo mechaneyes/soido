@@ -11,10 +11,10 @@ var path = require('path');
 var fs = require('fs');
 
 
-var server = http.createServer(handleRequest);
+// var server = http.createServer(handleRequest);
 // server.listen(9000);
 // console.log('Server started on port 9000');
-var port_number = server.listen(process.env.PORT || 9000);
+// var port_number = server.listen(process.env.PORT || 9000);
 
 
 
@@ -70,6 +70,7 @@ history = [];
 
 // WebSocket Portion
 var io = require('socket.io').listen(server);
+server.listen(9000);
 
 // Register a callback function to run when we have an individual connection
 // This is run for each individual user that connects
