@@ -66,7 +66,7 @@ function setup() {
 
   // socket = io("http://localhost");
   // socket = io();
-  socket = io.connect('http://localhost:9000');
+  socket = io.connect('https://localhost:9000');
 
   // socket = io('https://so-i-do.onrender.com/');
 
