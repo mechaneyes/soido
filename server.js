@@ -70,7 +70,7 @@ history = [];
 
 // WebSocket Portion
 var io = require('socket.io').listen(server);
-server.listen(443);
+server.listen(8080);
 
 // Register a callback function to run when we have an individual connection
 // This is run for each individual user that connects

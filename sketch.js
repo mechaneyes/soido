@@ -65,8 +65,8 @@ function setup() {
   // Start a socket connection to the server
 
   // socket = io("http://localhost");
-  socket = io();
-  // socket = io.connect('https://localhost:443');
+  // socket = io();
+  socket = io.connect('https://localhost:8080');
 
   // socket = io('https://so-i-do.onrender.com/');
 
