@@ -67,11 +67,9 @@ function setup() {
   // socket = io("http://localhost");
   socket = io();
   // socket = io('https://so-i-do.onrender.com/');
-
   // socket = io('https://lit-ravine-4197.herokuapp.com/');
-  // socket = io('http://'+window.location.hostname);
 
-  // This does the work of actually painting the dots to the screen
+  // The work of actually painting the dots to the screen
   socket.on(
     "painter",
 
@@ -97,36 +95,7 @@ function setup() {
     }
   );
 
-  // - - - - - DISABLING HISTORY - - - - -
-
-  // Paint the history of previous stokes to the
-  // screen when a new user connects. No blank canvas.
-
-  // socket.on('connect', function(history) {
-  //   console.log('connected');
-
-  //   socket.on('new painter', function(data){
-  //     console.log('data: ' + data);
-
-  //     // console.log('data.message[i].x: ' + data.message[i].x);
-
-  //     data.forEach( function (arrayItem) {
-
-  //       console.log('arrayItem.x : ' + arrayItem.x);
-  //       // console.log('arrayItem.y : ' + arrayItem.y);
-
-  //       fill(arrayItem.red, arrayItem.green, arrayItem.blue);
-  //       noStroke();
-  //       ellipse(arrayItem.x, arrayItem.y, arrayItem.z, arrayItem.z);
-
-  //     });
-
-  //   });
-
-  // });
-
   // Counting and emitting number of simultaneous users
-
   socket.on("counter", function (data) {
     // console.log('Num Painters: ' + data.message);
 
@@ -184,7 +153,7 @@ function TouchDot() {
 
     // Removed painting here and now painting from broadcast data on receipt
     // ellipse(touchX, touchY, this.diameter, this.diameter);
-    this.diameter += 16;
+    this.diameter += 5;
     senddeets(touchX, touchY, this.diameter, this.red, this.green, this.blue);
   };
 
